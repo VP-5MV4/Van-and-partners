@@ -1,0 +1,59 @@
+body {
+    font-family: 'PT Serif', serif;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+}
+
+.bg-primary-dark {
+    background-color: #0a1f44;
+}
+.text-gold {
+    color: #D4AF37;
+}
+.btn-warning {
+    background-color: #f0ca4d !important;
+    border-color: #E8B13E !important;
+    color: #102344 !important;
+    font-weight: bold;
+}
+.btn-warning:hover {
+    background-color: #d49f2c !important;
+    border-color: #d49f2c !important;
+    color: white !important;
+}
+
+.header-logo {
+    max-height: 120px;
+    width: auto;
+}
+
+.header-service-tag {
+    color: rgba(39, 23, 23, 0.7);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.header-phone {
+    color: rgb(187, 48, 48);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.header-phone:hover {
+    color: rgb(150, 30, 30);
+}
+.hero {
+    background: linear-gradient(135deg, #1a2f5a 0%, #416797 100%);
+}
+
+
+.footer {
+    background-color: #0a1f44;
+    color: white;
+}
+.footer p {
+    margin-bottom: 0.5rem;
+    color: rgba(255,255,255,0.8);
+}
