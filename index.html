@@ -4,59 +4,179 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ван и партнеры — Юридическая поддержка</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="py-0 bg-white shadow-sm">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-5">
-                <img src="assets/images/logo.png" alt="Ван и партнеры" class="header-logo">
-            </div>
-            <div class="col-7">
-                <div class="d-flex justify-content-between align-items-center">
-                    <span class="header-service-tag">Legal Support</span>
-                    <span class="header-service-tag">Юридическая поддержка</span>
-                    <a href="tel:+78121112233" class="text-decoration-none header-phone">8 (812) 111-22-33</a>
+    <header class="bg-white shadow-sm py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 text-center text-lg-start mb-3 mb-lg-0">
+                    <img src="assets/images/logo.png" alt="Ван и партнеры" style="max-height: 120px;" class="img-fluid">
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-3">
+                        <a href="#services" class="header-link">Legal Support</a>
+                        <a href="#contact" class="header-link">Юридическая поддержка</a>
+                        <a href="tel:+78121112233" class="header-phone">8 (812) 111-22-33</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<!-- ГЛАВНЫЙ ЭКРАН (HERO) -->
-<section class="hero py-5">
-    <div class="container text-white">
-        <div class="row align-items-center">
-            <div class="col-lg-7">
-                <h1 class="display-4 fw-bold">Ван и Партнеры</h1>
-                <p class="lead">Профессиональные юридические консультации</p>
-                <p class="fs-3">8 (812) 111-22-33</p>
-                <button class="btn btn-warning btn-lg mt-3">Получить консультацию</button>
-            </div>
-            <div class="col-lg-5 text-center">
-                <img src="assets/images/ur.png" alt="Юрист" class="img-fluid rounded shadow">
+    
+    <section class="hero py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <h1 class="display-4 fw-bold">Ван и Партнеры</h1>
+                    <p class="lead">Профессиональные юридические консультации</p>
+                    <p class="fs-3 fw-bold">8 (812) 111-22-33</p>
+                    <a href="#contact" class="btn btn-warning btn-lg mt-3">Получить консультацию</a>
+                </div>
+                <div class="col-lg-5 text-center" data-aos="fade-left">
+                    <img src="assets/images/ur.png" alt="Юрист" class="img-fluid rounded shadow">
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="py-5"></section>
-<section class="py-5 bg-light" id="features"></section>
-<section class="py-5" id="services"></section>
-<section class="py-5 bg-light" id="contact"></section>
-<section class="py-5"></section>
+    <section class="py-4">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">О нас</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-right">
+                    <p class="lead">Уже более 10 лет я являюсь практикующим юристом, защищая интересы своих клиентов и помогая им с решением сложных жизненных и профессиональных вопросов. Закончив Университет в 1999 году, я начал работу в Пермской городской коллегии адвокатов, где набирался опыта и осваивал практическую часть профессии юриста и где продолжаю практиковать и сегодня. Моя профессиональная область – гражданское право, включающее в себя жилищные споры, семейное право, вопросы наследства, защиту прав потребителя и многое другое. В этой сфере очень важно сохранять индивидуальный подход к проблеме клиента, стремиться обеспечить максимальный психологический комфорт и защиту интересов. В своей работе я придерживаюсь принципа полной прозрачности и доверия между мной и клиентом, что способствует более эффективному достижению цели.</p>
+                </div>
+                <div class="col-lg-4 text-center" data-aos="fade-left">
+                    <img src="assets/images/Au.png" alt="Юрист" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer class="py-4 footer">
-    <div class="container text-center">
-        <p>© 2025 Ван и партнеры. Все права защищены.</p>
-        <p>info@van.ru | 8 (812) 111-22-33 | Санкт-Петербург, ул. Большая Морская, 18</p>
-    </div>
-</footer>
+    <section class="py-5 bg-light" id="features">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Философия</h2>
+            <p class="text-center mb-5 lead" data-aos="fade-up">Моя основная задача — обеспечить вам профессиональную помощь и надёжное партнёрство, благодаря которому вы сможете быть спокойны и уверены в успехе решения своей проблемы.</p>
+            <h3 class="section-subtitle text-center mb-4">Отличительные особенности моей работы:</h3>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Специализация</h5>
+                            <p class="card-text">Определение приоритетных для себя направлений юридической деятельности позволило мне наработать высокую экспертизу в конкретных сферах и предложить вам квалифицированный подход, подкреплённый многолетней практикой.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Мобильность</h5>
+                            <p class="card-text">Работаю во всех судах Москвы и Московской области. Проведение переговоров, а также юридических консультаций возможно в удобной для вас локации.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Безопасность</h5>
+                            <p class="card-text">В рамках ведения дела я строго соблюдаю конфиденциальность персональных данных своих клиентов.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Прозрачность</h5>
+                            <p class="card-text">На протяжении нашего сотрудничества вы будете уведомлены о всех нюансах ведения дела и инструментах, к которым я прибегаю в ходе своей работы.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Вовлеченность</h5>
+                            <p class="card-text">При работе с вашими задачами я готов погружаться не только в индивидуальные особенности дела, но и в сферу вашей деятельности и профессиональной специфики, если этого требуют обстоятельства.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Внешняя поддержка</h5>
+                            <p class="card-text">Обладая широкими связями в различных профессиональных областях и большому опыту работы в разнообразных направлениях, мы сможем заручиться поддержкой высококвалифицированных независимых экспертов, что зачастую является залогом победы.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <section class="py-5" id="services">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Наши услуги</h2>
+            <div class="row" id="services-list">
+                <div class="col-12 text-center">Загрузка услуг...</div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-5 bg-light" id="contact">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Свяжитесь с нами</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <form id="contact-form" class="p-4 border rounded shadow-sm bg-white">
+                        <div class="mb-3">
+                            <label for="name" class="form-label fw-bold">Имя</label>
+                            <input type="text" class="form-control" id="name" name="name" autocomplete="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact" class="form-label fw-bold">Email или номер телефона</label>
+                            <input type="text" class="form-control" id="contact" name="contact" autocomplete="tel" required>
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Контакты</h2>
+            <div class="row align-items-center">
+                <div class="col-md-5" data-aos="fade-right">
+                    <p><strong>Email:</strong> info@van.ru</p>
+                    <p><strong>Телефон:</strong> 8 (812) 111-22-33</p>
+                    <p><strong>Адрес:</strong> Россия, 191186, Санкт-Петербург, ул. Большая Морская, 18</p>
+                </div>
+                <div class="col-md-7" data-aos="fade-left">
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=30.313%2C59.935&z=16&pt=30.313,59.935,pm2blm&l=map" width="100%" height="300" frameborder="0" allowfullscreen="true" title="Карта"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-white" style="background-color: #0a1f44;">
+        <div class="container text-center">
+            <p class="mb-1">© 2025 Ван и партнеры. Все права защищены.</p>
+            <p class="mb-0">info@van.ru | 8 (812) 111-22-33 | Санкт-Петербург, ул. Большая Морская, 18</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
