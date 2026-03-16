@@ -15,17 +15,16 @@ h1, h2, h3, h4, h5, .section-title, .section-subtitle {
 
 .section-title {
     font-size: 36px;
-    color: #405978;
+    color: #405978 !important;
 }
 
 .section-subtitle {
     font-size: 28px;
-    color: #405978;
+    color: #405978 !important;
 }
 
-
 .header-link {
-    color: rgba(39, 23, 23, 0.7);
+    color: rgba(39, 23, 23, 0.7) !important;
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
@@ -33,42 +32,48 @@ h1, h2, h3, h4, h5, .section-title, .section-subtitle {
 }
 
 .header-link:hover {
-    color: rgb(187, 48, 48);
-    text-decoration: underline;
+    color: rgb(187, 48, 48) !important;
+    text-decoration: underline !important;
     cursor: pointer;
 }
 
 .header-phone {
-    color: rgb(187, 48, 48);
+    color: rgb(187, 48, 48) !important;
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
 }
 
 .header-phone:hover {
-    color: rgb(150, 30, 30);
+    color: rgb(150, 30, 30) !important;
 }
-
 
 .hero {
     background: linear-gradient(135deg, #1a2f5a 0%, #416797 100%);
-    color: white;
 }
 
+.hero h1,
+.hero .lead,
+.hero .fs-3,
+.hero p,
+.hero .hero-phone,
+.hero .hero-subtitle,
+.hero .display-4 {
+    color: white !important;
+}
 
 .btn-warning {
-    background-color: #f0ca4d;
-    border-color: #E8B13E;
-    color: #102344;
-    font-weight: bold;
+    background-color: #f0ca4d !important;
+    border-color: #E8B13E !important;
+    color: #102344 !important;
+    font-weight: bold !important;
 }
 
 .btn-warning:hover {
-    background-color: #d49f2c;
-    border-color: #d49f2c;
-    color: white;
+    background-color: #d49f2c !important;
+    border-color: #d49f2c !important;
+    color: white !important;
 }
-
 
 #features .card {
     background-color: rgba(255, 255, 255, 0.05);
@@ -83,14 +88,14 @@ h1, h2, h3, h4, h5, .section-title, .section-subtitle {
 }
 
 #features .card-title {
-    color: #416797;
+    color: #416797 !important;
     font-size: 20px;
     margin-bottom: 15px;
 }
 
 
 .service-category h3 {
-    color: #405978;
+    color: #405978 !important;
     margin-bottom: 15px;
     font-size: 22px;
 }
@@ -105,8 +110,13 @@ h1, h2, h3, h4, h5, .section-title, .section-subtitle {
     border-bottom: 1px solid #eee;
 }
 
+
+footer {
+    background-color: #0a1f44;
+}
+
 footer p {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
 @media (max-width: 768px) {
@@ -116,4 +126,33 @@ footer p {
     .section-subtitle {
         font-size: 22px;
     }
+    
+    .hero h1 {
+        font-size: 40px !important;
+    }
+    .hero .lead {
+        font-size: 20px !important;
+    }
+    .hero .fs-3 {
+        font-size: 24px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 32px !important;
+    }
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.rounded {
+    border-radius: 8px;
+}
+
+.shadow {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
