@@ -176,3 +176,95 @@ footer p {
         margin-bottom: 15px;
     }
 }
+
+/* Стили для сообщений об ошибках */
+.error-message {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* Стиль для полей с ошибкой */
+.form-control.error-input {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+}
+/* Всплывающее сообщение (toast) */
+.toast-message {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    max-width: 350px;
+    font-family: 'PT Serif', serif;
+}
+
+.toast-message.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.toast-message.success {
+    background-color: #28a745;
+    color: white;
+    border-left: 4px solid #1e7e34;
+}
+
+.toast-message.error {
+    background-color: #dc3545;
+    color: white;
+    border-left: 4px solid #a71d2a;
+}
+
+/* Адаптивность для toast на мобильных */
+@media (max-width: 576px) {
+    .toast-message {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        max-width: none;
+        text-align: center;
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+}
+@media (max-width: 991px) {
+    .hero .btn {
+        margin-bottom: 30px;
+    }
+    
+    .hero-image {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero .btn {
+        margin-bottom: 25px;
+        margin-top: 10px;
+    }
+    
+    .hero-image {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero .btn {
+        margin-bottom: 20px;
+        margin-top: 15px;
+    }
+}
