@@ -1,16 +1,15 @@
-// ==================== ИНИЦИАЛИЗАЦИЯ ====================
+
 AOS.init({ duration: 800, once: true });
 
 (function() { emailjs.init('wPCLTrIcEBzfItGS0'); })();
 
-// ==================== SUPABASE КОНФИГУРАЦИЯ ====================
+
 const SUPABASE_URL = 'https://qcumtfdgasjnbwlypezh.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_JqqF_yL_7Lfj8bTH2Id2_A_68y9gpgv';
 
 const { createClient } = supabase;
 const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// ==================== ЗАГРУЗКА УСЛУГ ИЗ SUPABASE ====================
 async function loadServices() {
     const container = document.getElementById('services-list');
     if (!container) return;
@@ -51,137 +50,69 @@ async function loadServices() {
     
     container.innerHTML = html;
 }
-
 loadServices();
 
-// ==================== ВСПЛЫВАЮЩЕЕ СООБЩЕНИЕ (TOAST) ====================
+
+//Emjs
 function showToast(message, isError = false) {
-    // Удаляем существующий toast, если есть
     const existingToast = document.querySelector('.toast-message');
-    if (existingToast) {
-        existingToast.remove();
-    }
-    
-    // Создаём новый toast
+    if (existingToast) existingToast.remove();
+
     const toast = document.createElement('div');
     toast.className = 'toast-message';
-    if (isError) {
-        toast.classList.add('error');
-    } else {
-        toast.classList.add('success');
-    }
+    toast.classList.add(isError ? 'error' : 'success');
     toast.textContent = message;
-    
     document.body.appendChild(toast);
     
-    // Показываем toast
-    setTimeout(() => {
-        toast.classList.add('show');
-    }, 10);
+    setTimeout(() => toast.classList.add('show'), 10);
     
-    // Удаляем через 3 секунды
     setTimeout(() => {
         toast.classList.remove('show');
-        setTimeout(() => {
-            toast.remove();
-        }, 300);
+        setTimeout(() => toast.remove(), 300);
     }, 3000);
 }
 
-// ==================== ВАЛИДАЦИЯ ФОРМЫ ====================
-// Функция валидации имени
-function validateName(name) {
+function checkName(name) {
     if (name.trim().length < 2) {
-        return { valid: false, message: 'Имя должно содержать минимум 2 символа' };
+        return 'Имя должно содержать минимум 2 символа';
     }
-    return { valid: true, message: '' };
+    return '';
 }
 
-// Функция валидации email (с регулярным выражением)
-function validateEmail(email) {
-    // Регулярное выражение для проверки email
-    // Проверяет: что-то@что-то.что-то (без пробелов, с точкой в домене)
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
-    if (!emailRegex.test(email)) {
-        return { valid: false, message: 'Некорректная почта, пример ввода: vanp@gmail.com' };
+function checkEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regex.test(email)) {
+        return 'Некорректная почта, пример: vanp@gmail.com';
     }
-    
-    return { valid: true, message: '' };
+    return '';
 }
 
-// Функция для показа ошибок полей
-function showFieldError(fieldId, message) {
-    const errorDiv = document.getElementById(`${fieldId}-error`);
-    const inputField = document.getElementById(fieldId);
-    
-    if (errorDiv) {
-        errorDiv.textContent = message;
-        errorDiv.classList.add('show');
-    }
-    
-    if (inputField) {
-        inputField.classList.add('error-input');
-    }
-}
-
-function clearFieldError(fieldId) {
-    const errorDiv = document.getElementById(`${fieldId}-error`);
-    const inputField = document.getElementById(fieldId);
-    
-    if (errorDiv) {
-        errorDiv.textContent = '';
-        errorDiv.classList.remove('show');
-    }
-    
-    if (inputField) {
-        inputField.classList.remove('error-input');
-    }
-}
-
-// ==================== ОТПРАВКА ФОРМЫ ====================
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    // Очищаем предыдущие ошибки
-    clearFieldError('name');
-    clearFieldError('email');
-    
-    // Получаем значения полей
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     
-    // Валидация имени
-    const nameValidation = validateName(name);
-    if (!nameValidation.valid) {
-        showFieldError('name', nameValidation.message);
-        showToast(nameValidation.message, true);
+    const nameError = checkName(name);
+    if (nameError) {
+        showToast(nameError, true);
         return;
     }
     
-    // Валидация email
-    const emailValidation = validateEmail(email);
-    if (!emailValidation.valid) {
-        showFieldError('email', emailValidation.message);
-        showToast(emailValidation.message, true);
+    const emailError = checkEmail(email);
+    if (emailError) {
+        showToast(emailError, true);
         return;
     }
     
-    // Если всё валидно, отправляем форму
     emailjs.send('service_mepd1vs', 'template_hqdzx99', {
         name: name,
         email: email
     })
     .then(() => {
-        showToast('Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.', false);
-        this.reset();
-        // Очищаем классы ошибок после успешной отправки
-        clearFieldError('name');
-        clearFieldError('email');
+        showToast('Сообщение успешно отправлено!', false);
+        document.getElementById('contact-form').reset();
     })
-    .catch(err => {
-        console.error('Ошибка отправки формы:', err);
-        showToast('Произошла ошибка при отправке. Попробуйте позже или позвоните нам.', true);
-        showFieldError('email', 'Произошла ошибка при отправке. Попробуйте позже или позвоните нам.');
+    .catch(() => {
+        showToast('Ошибка отправки. Попробуйте позже.', true);
     });
 });
