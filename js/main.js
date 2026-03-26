@@ -1,8 +1,6 @@
-
 AOS.init({ duration: 800, once: true });
 
 (function() { emailjs.init('wPCLTrIcEBzfItGS0'); })();
-
 
 const SUPABASE_URL = 'https://qcumtfdgasjnbwlypezh.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_JqqF_yL_7Lfj8bTH2Id2_A_68y9gpgv';
@@ -53,7 +51,7 @@ async function loadServices() {
 loadServices();
 
 
-//Emjs
+//Emailjs
 function showToast(message, isError = false) {
     const existingToast = document.querySelector('.toast-message');
     if (existingToast) existingToast.remove();
@@ -79,18 +77,27 @@ function checkName(name) {
     return '';
 }
 
-function checkEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!regex.test(email)) {
-        return 'Некорректная почта, пример: vanp@gmail.com';
+function checkEmailOrPhone(inputValue) {
+    const cleanedValue = inputValue.replace(/[\s\-\(\)\+]/g, '');
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\d{11}$/;
+    
+    if (emailRegex.test(inputValue)) {
+        return '';
     }
-    return '';
+    
+    if (phoneRegex.test(cleanedValue)) {
+        return '';
+    }
+    return 'Введите корректный email (ivan@mail.ru) или телефон (11 цифр, например 79123456789)';
 }
+
 
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
+    
     const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
+    const contact = document.getElementById('email').value;
     
     const nameError = checkName(name);
     if (nameError) {
@@ -98,15 +105,16 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         return;
     }
     
-    const emailError = checkEmail(email);
-    if (emailError) {
-        showToast(emailError, true);
+
+    const contactError = checkEmailOrPhone(contact);
+    if (contactError) {
+        showToast(contactError, true);
         return;
     }
     
     emailjs.send('service_mepd1vs', 'template_hqdzx99', {
         name: name,
-        email: email
+        contact: contact
     })
     .then(() => {
         showToast('Сообщение успешно отправлено!', false);
